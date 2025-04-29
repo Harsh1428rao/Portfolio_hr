@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../styles/Projects.module.css";
-import kisan from "../assets/kisan.jpg"; // Replace with your project image
+import kisan from "../assets/Kisan.jpg"; // Replace with your project image
 import weather from "../assets/image.png"; // Replace with your project image
 import book from "../assets/book.jpg"; // Replace with your project image
 
