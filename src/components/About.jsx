@@ -4,7 +4,7 @@ import styles from "../styles/About.module.css";
 const About = () => {
   const skills = [
     { name: "Frontend Development", level: 90 },
-    { name: "Java", level: 8 },
+    { name: "Java", level: 80 },
     { name: "C++", level: 90 },
     { name: "Backend Development", level: 80 },
     { name: "Problem Solving", level: 95 },
