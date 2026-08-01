@@ -49,7 +49,7 @@ const Hero = () => {
       </div>
       <div className={styles.rightsection}>
         <div className={styles.imageContainer}>
-          <img src="\Harsh_Rao.png" alt="Kumar Ankesh" />
+          <img src="\Harsh_Rao.jpeg" alt="Harsh Rao" />
         </div>
       </div>
     </section>
