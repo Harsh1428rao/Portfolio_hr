@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../styles/Navbar.module.css";
-import cvPdf from "../assets/Harsh CVLPU.pdf";
+import cvPdf from "../assets/HarshResume.pdf";
 
 const Navbar = () => {
   return (
