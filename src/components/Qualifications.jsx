@@ -10,7 +10,7 @@ const Qualifications = () => {
           institution: "Lovely Professional University",
           degree: "Bachelor of Technology - Computer Science and Engineering",
           year: "Since August 2022",
-          details: "CGPA: 7.56",
+          details: "CGPA: 7.8",
         },
         {
           institution: "Bhavan’s KDKVM School",
