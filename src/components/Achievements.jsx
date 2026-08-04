@@ -1,61 +1,111 @@
 import React from "react";
-import styles from "../styles/Achievements.module.css";
+import styles from "../styles/Projects.module.css";
+import webhook from "../assets/webhook.png"; // generated banner — see below
+import crm from "../assets/crm.png"; // generated banner — see below
+import domainToInbox from "../assets/domain-to-inbox.png"; // generated banner — see below
 
-const achievements = [
-  {
-    title: "LeetCode Problem Solver",
-    description: "Solved more than 110 questions in 43 days on LeetCode",
-    year: "2024",
-  },
-  {
-    title: "HackerRank Achievements",
-    description:
-      "3★ Silver in Java, Python, C++ | 4★ Silver in C | 1★ Bronze in Problem Solving and SQL",
-    year: "2024",
-  },
-  {
-    title: "One India Runner Up",
-    description: "Won 1st runner-up prize in One India 2024",
-    year: "2024",
-  },
-  
-  {
-    title: "TOP 5% Coder in Adobe GenSolve Hackathon",
-    description:
-      "Showcased problem-solving and leadership in Adobe GenSolve Hackathon GFG 2024.",
-    year: "2024",
-  },
-  {
-    title: "Smart India Hackathon – Group Leader",
-    description:
-      "Participated and contributed as group leader in SIH 2024 hosted at LPU.",
-    year: "2024",
-  },
-  {
-    title: "TCS CodeVita Season 11",
-    description:
-      "Secured Global Rank 2527 in CodeVita 2024, showcasing problem-solving excellence.",
-    year: "2024",
-  },
-];
+const Projects = () => {
+  const projects = [
+    {
+      title: "Webhook Delivery System",
+      description:
+        "A reliable event-delivery service built in Go, handling retries with exponential backoff, HMAC-SHA256 signed payloads, and JWT-authenticated endpoints.",
+      technologies: [
+        "Go",
+        "PostgreSQL",
+        "Goroutines",
+        "HMAC-SHA256",
+        "JWT",
+        "Docker",
+        "GitHub Actions",
+      ],
+      image: webhook,
+      github: "https://github.com/Harsh1428rao/webhookd", // TODO: confirm repo name/URL
+      live: "", // TODO: add live/demo URL if you have one
+    },
+    {
+      title: "CRM Platform",
+      description:
+        "A CRM tool for managing contacts, pipelines, and follow-ups.", // TODO: replace with your real description
+      technologies: ["React", "Node.js", "MongoDB", "REST API"], // TODO: confirm actual stack
+      image: crm,
+      github: "https://github.com/Harsh1428rao/CRM", // TODO: confirm repo name/URL
+      live: "", // TODO: add live/demo URL if you have one
+    },
+    {
+      title: "Domain to Inbox",
+      description:
+        "An automated cold-outreach pipeline that finds and verifies domain-based email addresses and sends campaigns at scale.",
+      technologies: ["Node.js", "Hunter.io", "Brevo", "Automation"],
+      image: domainToInbox,
+      github: "https://github.com/Harsh1428rao/domain-to-inbox",
+      live: "", // TODO: add live/demo URL if you have one
+    },
+  ];
 
-const Achievements = () => (
-  <section id="achievements" className={styles.achievementsSection}>
-    <div className={styles.container}>
-      <h2 className={styles.sectionTitle}>Achievements</h2>
-      <div className={styles.achievementsGrid}>
-        {achievements.map((ach, idx) => (
-          <div key={idx} className={styles.achievementCard}>
-            <div className={styles.achievementHeader}>
-              <h3 className={styles.achievementTitle}>{ach.title}</h3>
-              <span className={styles.year}>{ach.year}</span>
+  return (
+    <section id="projects" className={styles.projectsSection}>
+      <div className={styles.container}>
+        <h2 className={styles.sectionTitle}>My Projects</h2>
+        <div className={styles.projectsGrid}>
+          {projects.map((project, index) => (
+            <div key={index} className={styles.projectCard}>
+              <div className={styles.projectImage}>
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    aspectRatio: "2.5 / 1", // matches the generated banner images — no cropping
+                    maxWidth: "600px", // Adjust the size
+                    objectFit: "cover", // Ensure image covers area
+                    borderRadius: "10px", // Optional: Add rounded corners
+                  }}
+                />
+                <div className={styles.projectOverlay}>
+                  <div className={styles.projectLinks}>
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.projectLink}
+                    >
+                      <i className="fab fa-github"></i>
+                    </a>
+                    {project.live && (
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.projectLink}
+                      >
+                        <i className="fas fa-external-link-alt"></i>
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
+              <div className={styles.projectContent}>
+                <h3 className={styles.projectTitle}>{project.title}</h3>
+                <p className={styles.projectDescription}>
+                  {project.description}
+                </p>
+                <div className={styles.technologies}>
+                  {project.technologies.map((tech, techIndex) => (
+                    <span key={techIndex} className={styles.techTag}>
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
-            <p className={styles.achievementDescription}>{ach.description}</p>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
-export default Achievements;
+export default Projects;
+
