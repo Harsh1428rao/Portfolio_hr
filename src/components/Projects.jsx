@@ -56,7 +56,8 @@ const Projects = () => {
                   alt={project.title}
                   style={{
                     width: "100%",
-                    height: "150px",
+                    height: "auto",
+                    aspectRatio: "2.5 / 1", // matches the generated banner images — no cropping
                     maxWidth: "600px", // Adjust the size
                     objectFit: "cover", // Ensure image covers area
                     borderRadius: "10px", // Optional: Add rounded corners
