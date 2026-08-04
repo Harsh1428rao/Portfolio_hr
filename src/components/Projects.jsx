@@ -1,37 +1,45 @@
 import React from "react";
 import styles from "../styles/Projects.module.css";
-import kisan from "../assets/Kisan.jpg"; // Replace with your project image
-import weather from "../assets/image.png"; // Replace with your project image
-import book from "../assets/book.jpg"; // Replace with your project image
+import webhook from "../assets/webhook.png"; // generated banner — see below
+import crm from "../assets/crm.png"; // generated banner — see below
+import domainToInbox from "../assets/domain-to-inbox.png"; // generated banner — see below
 
 const Projects = () => {
   const projects = [
     {
-      title: "Kisaan Bazaar",
+      title: "Webhook Delivery System",
       description:
-        "A platform for farmers and contractors to interact and engage in agricultural services and transactions.",
-      technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
-      image: kisan,
-      github: "https://github.com/Harsh1428rao/Kisan_Bazaar",
-      live: "https://kisan-bazaar-nine.vercel.app/",
+        "A reliable event-delivery service built in Go, handling retries with exponential backoff, HMAC-SHA256 signed payloads, and JWT-authenticated endpoints.",
+      technologies: [
+        "Go",
+        "PostgreSQL",
+        "Goroutines",
+        "HMAC-SHA256",
+        "JWT",
+        "Docker",
+        "GitHub Actions",
+      ],
+      image: webhook,
+      github: "https://github.com/Harsh1428rao/webhookd", // TODO: confirm repo name/URL
+      live: "", // TODO: add live/demo URL if you have one
     },
     {
-      title: "Weather App",
+      title: "CRM Platform",
       description:
-        "A React-based application that provides real-time weather updates and a 5-day forecast using the OpenWeather API. It features a search bar for fetching weather data, a dark mode toggle, and a search history function for quick access to recent searches.",
-      technologies: ["React", "OpenWeather API", "CSS", "JavaScript"],
-      image: weather,
-      github: "https://github.com/Harsh1428rao/Weather-App",
-      live: "https://weather-app-rao.netlify.app/",
+        "A CRM tool for managing contacts, pipelines, and follow-ups.", // TODO: replace with your real description
+      technologies: ["React", "Node.js", "MongoDB", "REST API"], // TODO: confirm actual stack
+      image: crm,
+      github: "https://github.com/Harsh1428rao/CRM", // TODO: confirm repo name/URL
+      live: "", // TODO: add live/demo URL if you have one
     },
     {
-      title: "Online Bookstore",
+      title: "Domain to Inbox",
       description:
-        "An online store built with the MERN stack, allowing users to browse and purchase books online.",
-      technologies: ["MongoDB", "Express", "React", "Node.js", "Stripe API"],
-      image: book,
-      github: "https://github.com/Harsh1428rao/BookStore",
-      live: "https://book-store-pied-alpha.vercel.app/",
+        "An automated cold-outreach pipeline that finds and verifies domain-based email addresses and sends campaigns at scale.",
+      technologies: ["Node.js", "Hunter.io", "Brevo", "Automation"],
+      image: domainToInbox,
+      github: "https://github.com/Harsh1428rao/domain-to-inbox",
+      live: "", // TODO: add live/demo URL if you have one
     },
   ];
 
@@ -64,14 +72,16 @@ const Projects = () => {
                     >
                       <i className="fab fa-github"></i>
                     </a>
-                    <a
-                      href={project.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={styles.projectLink}
-                    >
-                      <i className="fas fa-external-link-alt"></i>
-                    </a>
+                    {project.live && (
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.projectLink}
+                      >
+                        <i className="fas fa-external-link-alt"></i>
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
